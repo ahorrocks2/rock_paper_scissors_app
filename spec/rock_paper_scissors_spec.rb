@@ -2,7 +2,11 @@ require('rspec')
 require('rock_paper_scissors')
 
 describe('String#rock_paper_scissors') do
-  it("can accept input with any cases") do
-    expect("RoCK".rock_paper_scissors()).to(eq("rock"))
+#   it("accepts any case of input") do
+#     expect("rOCk".rock_paper_scissors).to(eq("rock"))
+#  end
+
+  it("rock beats scissors") do
+    expect("rock".rock_paper_scissors("scissors")).to(eq(true))
   end
 end
