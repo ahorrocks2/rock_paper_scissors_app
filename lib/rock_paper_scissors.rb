@@ -1,18 +1,23 @@
 class String
-  define_method(:rock_paper_scissors) do |player2|
-    self.downcase!()
-    player1 = self
+  define_method(:rock_paper_scissors) do
+    player1 = self.downcase()
 
-    points= {"rock" => 3, "scissors" => 2, "paper" =>2}
+    points= {2 => "rock", 1 => "scissors", 0 => "paper"}
+    player2 = rand(3)
+    player2 = points.fetch(player2)
 
-    player1 = points.fetch("rock")
-    player2 = points.fetch("scissors")
 
-    if player1 > player2
-      true
+
+    if player1== "rock" && player2== "scissors"
+      "You won!"
+    elsif player1== "scissors" && player2== "paper"
+      "Do a happy dance!"
+    elsif player1== "paper" && player2== "rock"
+      "You have vanquished your opponent."
+    elsif player1 == player2
+      "Play again!"
     else
-      false
-
+      "You lost. :-("
     end
   end
 end
